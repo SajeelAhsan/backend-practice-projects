@@ -1,0 +1,23 @@
+{
+  "name": "backend-development",
+  "version": "1.0.0",
+  "description": "a backend project with mongoose db and express",
+  "keywords": [
+    "javascript",
+    "backend",
+    "mongoose",
+    "database",
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "ISC",
+  "author": "sajeel ahsan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
