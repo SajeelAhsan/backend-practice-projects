@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import {
-    publishAVideo,   
+    publishAVideo,
+    getVideoById,
+    updateVideo,   
 } from "../controllers/video.controller.js"
 import {verifyJWT} from "../middlewares/auth.middleware.js"
 import {upload} from "../middlewares/multer.middleware.js"
@@ -27,9 +29,21 @@ router
 
 router
     .route("/:videoId")
-    .get()
+    .get(getVideoById)
     .delete()
-    .patch(upload.single("thumbnail"), );
+    .patch(
+        upload.fields([
+            {
+                name: "videoFile",
+                maxCount: 1,
+            },
+            {
+                name: "thumbnail",
+                maxCount: 1,
+            },
+        ]),
+        updateVideo
+    );
 
 router.route("/toggle/publish/:videoId").patch();
 
